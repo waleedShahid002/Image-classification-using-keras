@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+
+    <style>
+
+        
+
+        body {
+            color: darkorange;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #cce12a;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        h2, h3 {
+            color: #444;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        img {
+            max-width: 200px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to image Classifier</h1>
+    <form method="post" enctype="multipart/form-data" action="/api/index">
+        {% csrf_token %}
+        <input type="file" name="image" accept="image/*" required>
+
+        <button type="submit">Classify Image</button>
+    </form>
+    <!-- <div id="result"></div> -->
+     <h2>Result:</h2>
+     {% if result %}
+          <p>Prediction: {{ result.label }}</p>
+          <p>Confidence: {{ result.confidence }}</p>
+          <h3>Uploaded Image: </h3>
+          <img src="{{ MEDIA_URL }}{{ image_url}}" alt="Uploaded image" >
+    {% endif %}
+
+    {% if error %}
+           <p style="color: aqua;">{{ error}}</p>
+          
+    {% endif %}
+
+</body>
+</html>
