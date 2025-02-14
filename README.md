@@ -38,6 +38,7 @@ A Django api is build in this project so that the user can send request to serve
 **Testing the API**
 
 At the end API is tested weather it is working well or not and also to ensure that the model prediction accuracy has to be same on colab and on django app
+
 ![image](https://github.com/user-attachments/assets/c7851f11-f818-4215-9f8f-507d263daade)
 
 
