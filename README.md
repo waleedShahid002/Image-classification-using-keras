@@ -41,6 +41,19 @@ At the end API is tested weather it is working well or not and also to ensure th
 
 ![image](https://github.com/user-attachments/assets/c7851f11-f818-4215-9f8f-507d263daade)
 
+**Accuracy evaluation**
+
+For the accuracy evaluation of the model a confusion matrix was formed to measure the accuracy, precison and F1 score of the model.Confusion matrix is a tool used to evaluate the performance of model and is visually represented as a table. Below a screenshot is attached which is showing the accuracy, precison and F1 score of the model.
+
+
+![Screenshot 2025-03-04 144507](https://github.com/user-attachments/assets/92f08037-386c-4533-8a12-d9e029bb6b48)
+
+**Accuracy improvement**
+
+The above screenshot showed that models accuracy is 91% but for the improvement of accuracy several techniques were considered like using more augmentation layers, using learning rate technique during model training, using more covolutional layers and transfer learning technique.After testing all the above techniques Transfer learning gave the best accuracy among all other techniques.Transfer Learning is a powerful technique in deep learning where you leverage a pre-trained model (usually trained on a large dataset like ImageNet) and fine-tune it for your specific task. This is especially useful when you have a smaller dataset, as it allows you to benefit from the features learned by the pre-trained model.For this purpose EfficentNetB0 model was used which is trained on billion of images and gave accuracy of 99%.
+
+![Screenshot 2025-03-06 174304](https://github.com/user-attachments/assets/5af35e0d-c933-4a14-9260-11a539012bfb)
+
 
 
 
